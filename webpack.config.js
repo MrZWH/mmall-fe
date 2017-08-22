@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-21 17:29:51 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-22 16:19:53
+ * @Last Modified time: 2017-08-22 17:18:07
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -47,6 +47,14 @@ var config = {
                 loader: 'url-loader'
             }
         ]
+    },
+    resolve: {
+        alias: {
+            util: __dirname + '/src/util',
+            page: __dirname + '/src/page',
+            service: __dirname + '/src/service',
+            image: __dirname + '/src/image'
+        }
     },
     plugins: [
         // 独立通用模块到js/base.js
