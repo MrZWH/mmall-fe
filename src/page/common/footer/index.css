@@ -1,0 +1,25 @@
+/*
+ * @Author: whz 
+ * @Date: 2017-08-23 14:43:11 
+ * @Last Modified by: whz
+ * @Last Modified time: 2017-08-23 14:45:04
+ */
+.footer {
+    padding-bottom: 10px;
+}
+
+.footer .links {
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
+
+.footer .links .link {
+    padding: 0 10px;
+}
+
+.footer .copyright {
+    text-align: center;
+    color: #666;
+    line-height: 30px;
+}
