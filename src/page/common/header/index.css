@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-23 14:48:49 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-23 15:14:44
+ * @Last Modified time: 2017-08-24 17:12:55
  */
  /*通用头部导航  */
 .header .logo {
@@ -13,6 +13,7 @@
     left: 60px;
     top: 34px;
     font-weight: bold;
+    text-decoration: none;
 }
 
 .header .search-con {
@@ -33,4 +34,15 @@
     position: absolute;
     height: 44px;
     width: 80px;
+}
+
+/* 面包屑导航 */
+.crumb {
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-top: 2px solid #c60023;
 }

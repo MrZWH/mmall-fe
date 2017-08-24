@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-22 17:04:47 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-23 10:38:47
+ * @Last Modified time: 2017-08-24 13:46:15
  */
 'use strict';
 var Hogan = require('hogan.js')
@@ -73,7 +73,7 @@ var _mm = {
     },
     // 统一登录处理
     doLogin: function() {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome: function() {
         window.location.href = './index.html';
