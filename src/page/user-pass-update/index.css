@@ -1,12 +1,12 @@
 /*
  * @Author: whz 
- * @Date: 2017-08-25 10:01:18 
+ * @Date: 2017-08-25 10:24:29 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-25 10:43:43
+ * @Last Modified time: 2017-08-25 10:46:54
  */
 
  .form-line {
-    margin-top: 10px;
+    margin-bottom: 10px;
     height: 30px;
     line-height: 30px;
     font-size: 14px;
@@ -14,7 +14,7 @@
 
 .form-line .label {
     display: inline-block;
-    width: 60px;
+    width: 80px;
     text-align: center;
 }
 
@@ -23,5 +23,4 @@
     line-height: 25px;
     font-size: 14px;
     width: 200px;
-    margin-top: 10px;
 }

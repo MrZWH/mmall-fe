@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-23 16:31:42 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-23 17:04:02
+ * @Last Modified time: 2017-08-25 10:35:26
  */
 
 'use strict';
@@ -28,9 +28,9 @@ var navSide = {
                 href: './order-list.html'
             },
             {
-                name: 'pass-update',
+                name: 'user-pass-update',
                 desc: '修改密码',
-                href: './pass-update.html'
+                href: './user-pass-update.html'
             },
             {
                 name: 'about',

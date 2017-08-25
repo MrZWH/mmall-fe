@@ -1,8 +1,8 @@
 /*
  * @Author: whz 
- * @Date: 2017-08-25 10:00:51 
+ * @Date: 2017-08-25 10:23:50 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-25 10:21:36
+ * @Last Modified time: 2017-08-25 10:45:53
  */
 
 'use strict';
@@ -13,7 +13,6 @@ require('page/common/header/index.js');
 var navSide = require('page/common/nav-side/index.js');
 var _mm = require('util/mm.js');
 var _user = require('service/user-service.js');
-var templateIndex = require('./index.string');
 // 表单里的错误提示
 var formError = {
     show: function(errMsg) {
@@ -34,27 +33,26 @@ var page = {
 
         // 初始化左侧菜单
         navSide.init({
-            name: 'user-center'
+            name: 'user-pass-update'
         });
 
-        // 加载用户信息
-        this.loadUserInfo();
     },
     bindEvent: function() {
         var _this = this;
         // 点击提交按钮后的动作
         $(document).on('click', '.btn-submit', function() {
             var userInfo = {
-                phone: $.trim($('#phone').val()),
-                email: $.trim($('#email').val()),
-                question: $.trim($('#question').val()),
-                answer: $.trim($('#answer').val())
+                password: $.trim($('#password').val()),
+                passwordNew: $.trim($('#passwordNew').val()),
+                passwordConfirm: $.trim($('#passwordConfirm').val())
                 },
                 validateResult = _this.validateForm(userInfo);
                 if(validateResult.status) {
-                    _user.updateUserInfo(userInfo, function(res, msg) {
+                    _user.updatePassword({
+                        passwordOld: userInfo.password,
+                        passwordNew: userInfo.passwordNew
+                    }, function(res, msg) {
                         _mm.successTips(msg);
-                        window.location.href = './user-center.html'
                     }, function(errMsg) {
                         _mm.errorTips(errMsg);
                     });
@@ -64,17 +62,6 @@ var page = {
         })
     },
 
-    // 加载用户信息
-    loadUserInfo: function() {
-        var userHtml = '';
-        _user.getUserInfo(function(res) {
-            userHtml = _mm.renderHtml(templateIndex, res);
-            $('.panel-body').html(userHtml);
-        }, function(errMsg) {
-            _mm.errorTips(errMsg);
-        });
-    },
-
     // 验证字段信息
     validateForm: function(formData) {
         var result = {
@@ -82,27 +69,21 @@ var page = {
             msg: ''
         };
 
-        // 验证手机号格式
-        if (!_mm.validate(formData.phone, 'phone')) {
-            result.msg = '手机号格式不正确';
+       // 验证密码是否为空
+       if (!_mm.validate(formData.password, 'require')) {
+        result.msg = '原密码不能为空';
+        return result;
+        };
+
+        // 验证密码长度
+        if (!formData.passwordNew || formData.passwordNew.length < 6) {
+            result.msg = '密码长度不能少于6位';
             return result;
         };
 
-        // 验证邮箱
-        if (!_mm.validate(formData.email, 'email')) {
-            result.msg = '邮箱格式不正确';
-            return result;
-        };
-
-        // 验证密码提示问题
-        if (!_mm.validate(formData.question, 'require')) {
-            result.msg = '密码提示问题不能为空';
-            return result;
-        };
-
-        // 验证密码提示答案
-        if (!_mm.validate(formData.answer, 'require')) {
-            result.msg = '密码提示答案不能为空';
+        // 验证两次输入密码是否一致
+        if (formData.passwordNew !== formData.passwordConfirm) {
+            result.msg = '两次输入密码不一致';
             return result;
         };
 
