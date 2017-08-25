@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-23 14:48:52 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-23 15:15:11
+ * @Last Modified time: 2017-08-25 15:50:55
  */
 'use strict'; 
 
@@ -13,10 +13,11 @@ var _mm = require('util/mm.js');
 // 通用页面头部
 var header = {
     init: function() {
+        this.onLoad();
         this.bindEvent();
     },
     onLoad: function() {
-        var keyword = _nn.getUrlParam('keyword');
+        var keyword = _mm.getUrlParam('keyword');
         if (keyword) {
             $('#search-input').val(keyword);
         };
