@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-23 15:34:38 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-23 15:55:15
+ * @Last Modified time: 2017-08-29 16:08:04
  */
 
  'use strict';
@@ -73,7 +73,7 @@
     // 检车密码提示问题答案
     checkAnswer: function(userInfo, resolve, reject) {
         _mm.request({
-            url: _mm.getServerUrl('/user/fprget_check_answer.do'),
+            url: _mm.getServerUrl('/user/forget_check_answer.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,

@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-25 15:43:01 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-28 14:37:41
+ * @Last Modified time: 2017-08-29 10:38:31
  */
 
  'use strict';
@@ -83,7 +83,7 @@ var page = {
             $('.p-list-con').html(listHtml);
             _this.loadPagination({
                 hasPreviousPage: res.hasPreviousPage,
-                prePage: prePage,
+                prePage: res.prePage,
                 nextPage: res.nextPage,
                 pageNum: res.pageNum,
                 pages: res.pages
@@ -95,8 +95,15 @@ var page = {
     
     // 加载分页信息
     loadPagination: function(pageInfo) {
+        var _this = this;
         this.pagination ? '' : (this.pagination = new Pagination());
-        this.pagination.render
+        this.pagination.render($.extend({}, pageInfo, {
+            container: $('.pagination'),
+            onSelectPage: function(pageNum) {
+                _this.data.ListParam.pageNum = pageNum;
+                _this.loadList();
+            }
+        }))
     }
 }
 $(function() {

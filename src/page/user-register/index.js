@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-24 14:41:26 
  * @Last Modified by: whz
- * @Last Modified time: 2017-08-24 15:05:20
+ * @Last Modified time: 2017-08-29 17:32:30
  */
 
 
@@ -61,7 +61,7 @@ var page = {
         var formData = {
             username: $.trim($('#username').val()),
             password: $.trim($('#password').val()),
-            passwordConfirm: $.trim($('#passwordConfirm').val()),
+            passwordConfirm: $.trim($('#password-confirm').val()),
             phone: $.trim($('#phone').val()),
             email: $.trim($('#email').val()),
             question: $.trim($('#question').val()),
@@ -107,6 +107,7 @@ var page = {
         };
 
         // 验证两次输入密码是否一致
+        debugger
         if (formData.password !== formData.passwordConfirm) {
             result.msg = '两次输入密码不一致';
             return result;
