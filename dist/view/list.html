@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=UTF-8> <meta name=viewport content="width=device-width,initial-scale=1"> <meta http-equiv=X-UA-Compatible content="ie=edge"> <meta name=keywords content=happymmall,电商> <meta name=description content=happymmall电商平台开发教程> <link rel=dns-prefetch href=//cdn.bootcss.com> <link rel=dns-prefetch href=//s.happymmall.com> <link rel=dns-prefetch href=//img.happymmall.com>
+        <title>商品列表 - happymmall电商平台</title>
+    <link rel="shortcut icon" href="//s.happymmall.com/mmall-fe/dist/favicon.ico"><link href="//s.happymmall.com/mmall-fe/dist/css/common.css?c0aeb68baef02d7ed165" rel="stylesheet"><link href="//s.happymmall.com/mmall-fe/dist/css/list.css?c0aeb68baef02d7ed165" rel="stylesheet"></head>
+<body>
+    <div class=nav> <div class=w> <div class=user-info> <span class="user not-login"> <span class="link js-login">登录</span> <span class="link js-register">注册</span> </span> <span class="user login"> <span class=link-text> 欢迎， <span class=username> </span> </span> <span class="link js-logout">退出</span> </span> </div> <ul class=nav-list> <li class=nav-item> <a href=./cart.html class=link> <i class="fa fa-shopping-cart"></i> 购物车（<span class=cart-count>0</span>） </a> </li> <li class=nav-item> <a href=./order-list.html class=link>我的订单</a> </li> <li class=nav-item> <a href=./user-center.html class=link>我的MMall</a> </li> <li class=nav-item> <a href=./about.html class=link>关于MMall</a> </li> </ul> </div> </div>
+    <div class=header> <div class=w> <a href=./index.html class=logo>MMall</a> <div class=search-con> <input class=search-input id=search-input placeholder=请输入商品名称 type="" name="" value=""> <button type="" class="btn search-btn" id=search-btn>搜索</button> </div> </div> </div>
+    <div class="crumb">
+        <div class="w">
+            <div class="crumb-con">
+                <a href="./index.html" class="link">MMall</a>
+                <span>&gt;</span>
+                <span class="link-text">商品列表</span>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrap w">
+        <ul class="sort-con">
+            <li class="sort-item active" data-type="default">默认排序</li>
+            <li class="sort-item" data-type="price">
+                <span>价格</span>
+                <i class="fa fa-sort-asc"></i>
+                <i class="fa fa-sort-desc"></i>
+            </li>
+        </ul>
+        
+        <!-- list 容器 -->
+        <ul class="p-list-con">
+
+        </ul>
+        <!-- 分页 -->
+        <div class="pagination"></div>
+    </div>
+    <div class=footer> <div class=w> <div class=links> <a href=http://www.imooc.com target=_blank class=link>慕课网</a> | <a href=https://www.baidu.com target=_blank class=link>百度</a> | <a href=https://www.taobao.com target=_blank class=link>淘宝</a> | <a href=https://www.zhihu.com target=_blank class=link>知乎</a> </div> <p class=copyright> copyright&nbsp;&copy;&nbsp;2017 happymmall.com All Right Reserved </p> </div> </div> <script src=https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js></script>
+<script type="text/javascript" src="//s.happymmall.com/mmall-fe/dist/js/base.js?c0aeb68baef02d7ed165"></script><script type="text/javascript" src="//s.happymmall.com/mmall-fe/dist/js/list.js?c0aeb68baef02d7ed165"></script></body>
+</html>
