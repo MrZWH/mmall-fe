@@ -2,7 +2,7 @@
  * @Author: whz 
  * @Date: 2017-08-21 17:29:51 
  * @Last Modified by: whz
- * @Last Modified time: 2017-09-01 17:44:55
+ * @Last Modified time: 2017-09-05 14:02:29
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -46,7 +46,7 @@ var config = {
     },
     output: {
         path: __dirname + '/dist/',
-        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '//s.happymmall.com/mmall-fe/dist/',
+        publicPath: 'dev' === WEBPACK_ENV ? '/dist/' : '/dist/',
         filename: 'js/[name].js'
     },
     externals : {
